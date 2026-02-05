@@ -64,6 +64,22 @@ nvidia-docker run --privileged -it \
            li_init:1.0 /bin/bash
 ```
 
+```
+docker run --privileged -it \
+  --gpus all \
+  --net=host \
+  --ipc=host \
+  --shm-size=1gb \
+  -e DISPLAY=$DISPLAY \
+  -e QT_X11_NO_MITSHM=1 \
+  -e NVIDIA_DRIVER_CAPABILITIES=all \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+  -v /home/wenda/repositories/li_init_ws/src/LiDAR_IMU_Init:/home/catkin_ws/src \
+  --name=li_init \
+  li_init:1.0 /bin/bash
+
+```
+
 If you have successfully created the docker container, the terminal output will be similar to the below.  
 
 ```
