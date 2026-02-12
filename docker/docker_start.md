@@ -95,6 +95,8 @@ In your docker container, follow the commands.
 catkin_make
 source devel/setup.bash
 roslaunch lidar_imu_init xxx.launch
+
+i.e. roslaunch lidar_imu_init livox_mid360.launch
 ```
 
 After initialization and refinement finished, the result would be written into `catkin_ws/src/LiDAR_IMU_Init/result/Initialization_result.txt`
